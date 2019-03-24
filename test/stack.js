@@ -1,12 +1,12 @@
 "use strict";
 
-const path = require('path'),
-	  Stack = require('../data-structure/stack');
+const path = require('path');
+const Stack = require('../data-structure/stack');
 
 describe("stack", function() {
 
 	it("", function() {
-		console.log(Stack);
+		// console.log(Stack);
 	});
 
 });

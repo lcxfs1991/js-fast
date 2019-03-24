@@ -1,23 +1,34 @@
 
 class Stack {
-	constructor() {
-
+	constructor(max = 100) {
+        this.max = max;
+        this.data = [];
 	}
 
 	isFull() {
-
+        return this.data.length === this.max;
 	}
 
 	isEmpty() {
-
+        return !this.data.length;
 	}
 
-	Push() {
+	push(val) {
+        if (this.isFull()) {
+            return -1;
+        }
 
+        return this.data.push(val);
 	}
 
-	Pop() {
+	pop() {
 
-	}
+    }
+
+    top() {
+
+    }
+
 }
 
+module.exports = Stack;

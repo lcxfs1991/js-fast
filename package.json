@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./data-structure",
-    "test": "mocha --compilers js:babel-core/register"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -26,16 +26,22 @@
     "coveralls": "^2.13.1",
     "eslint": "^3.19.0",
     "eslint-config-alloy": "^1.2.1",
-    "expect.js": "^0.3.1",
-    "istanbul": "^0.4.5",
-    "mocha": "^3.4.1",
-    "mocha-lcov-reporter": "^1.3.0"
+    "jest": "^24.5.0"
   },
   "engines": {
     "node": ">=6.4.0"
   },
-  "dependencies": {
-    "babel-core": "^6.24.1",
-    "babel-preset-es2015": "^6.24.1"
+  "dependencies": {},
+  "jest": {
+    "testMatch": [
+      "**/test/**/*.js"
+    ],
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
   }
 }
