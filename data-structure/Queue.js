@@ -1,5 +1,5 @@
 
-class Stack {
+class Queue {
 	constructor(max = 100) {
         this.max = max;
         this.data = [];
@@ -13,7 +13,7 @@ class Stack {
         return !this.data.length;
 	}
 
-	push(val) {
+	enqueque(val) {
         if (this.isFull()) {
             return -1;
         }
@@ -21,12 +21,12 @@ class Stack {
         return this.data.push(val);
 	}
 
-	pop() {
+	dequeque() {
         if (this.isEmpty()) {
             return null;
         }
 
-        return this.data.pop();
+        return this.data.shift();
     }
 
     size() {
@@ -38,13 +38,21 @@ class Stack {
             return null;
         }
 
+        return this.data[0];
+    }
+
+    tail() {
+        if (this.isEmpty()) {
+            return null;
+        }
+
         return this.data[this.size() - 1];
     }
 
     traverse() {
-        return this.data.reverse().join(',');
+        return this.data.join(',');
     }
 
 }
 
-module.exports = Stack;
+module.exports = Queue;
