@@ -1,6 +1,6 @@
 
 const path = require('path');
-const SelectionSort = require('../algorithm/selection-sort');
+const SelectionSort = require('../algorithm/SelectionSort');
 
 describe('SelectionSort', () => {
     it('sort 1', () => {

@@ -74,12 +74,32 @@ class UniLinkedList {
 
     traverse() {
         let result = [];
-        let next = this.head;
-        while (next) {
-            result.push(next.data);
-            next = next.next;
+        let head = this.head;
+        while (head) {
+            result.push(head.data);
+            head = head.next;
         }
         return result.join(',');
+    }
+
+    // 逆序
+    reverse() {
+        let prev = null;
+        let next = (this.head) ? this.head.next : null;
+
+        while (next) {
+            this.head.next = prev;
+            prev = this.head;
+
+            this.head = next;
+            next = next.next;
+
+            if (!next) {
+                this.head.next = prev;
+            }
+        }
+
+        return this;
     }
 
 }

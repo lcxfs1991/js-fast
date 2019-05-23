@@ -1,6 +1,6 @@
 
 const path = require('path');
-const InsertionSort = require('../algorithm/insertion-sort');
+const InsertionSort = require('../algorithm/InsertionSort');
 
 describe('InsertionSort', () => {
     it('sort 1', () => {

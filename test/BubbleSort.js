@@ -1,6 +1,6 @@
 
 const path = require('path');
-const BubbleSort = require('../algorithm/bubble-sort');
+const BubbleSort = require('../algorithm/BubbleSort');
 
 describe('BubbleSort', () => {
     it('sort 1', () => {

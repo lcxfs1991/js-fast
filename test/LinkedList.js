@@ -42,4 +42,13 @@ describe("UniLinkedList", function() {
         expect(list.traverse()).toBe('0,2,6,8,10');
     });
 
+    it("reverse", function() {
+        let list = new UniLinkedList();
+        for (let i = 0; i <= 5; i++) {
+            list.add(i * 2);
+        }
+
+        expect(list.reverse().traverse()).toBe('10,8,6,4,2,0');
+    });
+
 });

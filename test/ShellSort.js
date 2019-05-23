@@ -1,6 +1,6 @@
 
 const path = require('path');
-const ShellSort = require('../algorithm/shell-sort');
+const ShellSort = require('../algorithm/ShellSort');
 
 describe('ShellSort', () => {
     it('sort 1', () => {
