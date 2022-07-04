@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint ./data-structure",
-    "test": "jest"
+    "test": "jest",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -21,17 +22,30 @@
     "url": "https://github.com/lcxfs1991/js-fast/issues"
   },
   "homepage": "https://github.com/lcxfs1991/js-fast#readme",
+  "commitlint": {
+    "extends": [
+      "./commitlint.config.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.3",
+    "@commitlint/config-conventional": "^17.0.3",
     "codecov.io": "^0.1.6",
     "coveralls": "^3.1.1",
     "eslint": "^8.19.0",
     "eslint-config-alloy": "^4.6.2",
+    "git-cz": "^4.9.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.2"
   },
   "engines": {
     "node": ">=6.4.0"
   },
-  "dependencies": {},
   "jest": {
     "testMatch": [
       "**/test/**/*.js"
