@@ -7,11 +7,12 @@ window.onscroll = denounce(function() {
 
 function denounce(fn, deplay = 200) {
     let timer  = null
-    let self = this
-    return () => {
+    return (...newArgs) => {
+        // 本示例指向的是 window
+        let self = this
         timer && clearTimeout(timer)
         timer = setTimeout(() => {
-            fn.bind(this)()
+            fn.bind(self)(...newArgs);
         }, 200)
     }
 }

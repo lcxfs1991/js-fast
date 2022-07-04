@@ -2,18 +2,18 @@
 
 const path = require('path');
 const {
-    UniLinkedList
+    SinglyLinkedList
 } = require('../data-structure/LinkedList');
 
-describe("UniLinkedList", function() {
+describe("SinglyLinkedList", function() {
 
 	it("isEmpty", function() {
-        let list = new UniLinkedList();
+        let list = new SinglyLinkedList();
         expect(list.isEmpty()).toBe(true);
     });
 
     it("last", function() {
-        let list = new UniLinkedList();
+        let list = new SinglyLinkedList();
         for (let i = 0; i < 5; i++) {
             list.add(i * 2);
         }
@@ -22,7 +22,7 @@ describe("UniLinkedList", function() {
     });
 
     it("find", function() {
-        let list = new UniLinkedList();
+        let list = new SinglyLinkedList();
         for (let i = 0; i <= 5; i++) {
             list.add(i * 2);
         }
@@ -33,7 +33,7 @@ describe("UniLinkedList", function() {
     });
 
     it("del", function() {
-        let list = new UniLinkedList();
+        let list = new SinglyLinkedList();
         for (let i = 0; i <= 5; i++) {
             list.add(i * 2);
         }
@@ -43,7 +43,7 @@ describe("UniLinkedList", function() {
     });
 
     it("reverse", function() {
-        let list = new UniLinkedList();
+        let list = new SinglyLinkedList();
         for (let i = 0; i <= 5; i++) {
             list.add(i * 2);
         }

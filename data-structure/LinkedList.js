@@ -14,27 +14,14 @@ class BiNode {
     }
 }
 
-class UniLinkedList {
-	constructor() {
+class BaseLinkedList {
+    constructor() {
         this.head = null;
         this.size = 0;
     }
 
     isEmpty() {
         return !this.size;
-    }
-
-    add(val) {
-        let node = new UniNode(val);
-
-        if (!this.size) {
-            this.head = node;
-        }
-        else {
-            let last = this.last();
-            last.next = node;
-        }
-        ++this.size;
     }
 
     find(val) {
@@ -59,6 +46,34 @@ class UniLinkedList {
         return true;
     }
 
+    traverse() {
+        let result = [];
+        let head = this.head;
+        while (head) {
+            result.push(head.data);
+            head = head.next;
+        }
+        return result.join(',');
+    }
+}
+
+class SinglyLinkedList extends BaseLinkedList {
+	constructor() {
+        super();
+    }
+
+    add(val) {
+        let node = new UniNode(val);
+
+        if (!this.size) {
+            this.head = node;
+        } else {
+            let last = this.last();
+            last.next = node;
+        }
+        ++this.size;
+    }
+
     last() {
         let next = this.head;
         while (next) {
@@ -70,16 +85,6 @@ class UniLinkedList {
         }
 
         return next;
-    }
-
-    traverse() {
-        let result = [];
-        let head = this.head;
-        while (head) {
-            result.push(head.data);
-            head = head.next;
-        }
-        return result.join(',');
     }
 
     // 逆序
@@ -104,6 +109,31 @@ class UniLinkedList {
 
 }
 
+class DoublelyLinkedList extends BaseLinkedList {
+    constructor() {
+        super();
+    }
+
+    isEmpty() {
+        return !this.size;
+    }
+
+    add(val) {
+        let node = new BiNode(val);
+
+        if (!this.size) {
+            this.head = node;
+            node.prev = this.head;
+        } else {
+            let last = this.last();
+            last.next = node;
+            node.prev = last;
+        }
+        ++this.size;
+    }
+}
+
 module.exports = {
-    UniLinkedList,
+    SinglyLinkedList,
+    DoublelyLinkedList,
 };
