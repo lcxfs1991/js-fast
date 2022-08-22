@@ -99,10 +99,39 @@ class SinglyLinkedList extends BaseLinkedList {
             this.head = next;
             next = next.next;
 
+            // 到尽头的时候，倒数第一个节点，指向倒数第二个节点
             if (!next) {
                 this.head.next = prev;
             }
         }
+
+        return this;
+    }
+
+    reverseNToM(m, n) {
+        let prev = null;
+        let cur = this.head;
+
+        for (let i = 1; i < m - 1; i++) {
+            cur = cur.next;
+        }
+
+        // n前的头节点
+        let head = cur;
+        // start 是反转区间的第一个结点
+        let start = head.next  
+        prev = start;
+        cur = prev.next;
+
+        for (let i = m; i < n; i++) {
+            let next = cur.next
+            cur.next = prev
+            prev = cur
+            cur = next;
+        }
+
+        head.next = prev;
+        start.next = cur;
 
         return this;
     }
@@ -136,4 +165,6 @@ class DoublelyLinkedList extends BaseLinkedList {
 module.exports = {
     SinglyLinkedList,
     DoublelyLinkedList,
+    UniNode,
+    BiNode,
 };
