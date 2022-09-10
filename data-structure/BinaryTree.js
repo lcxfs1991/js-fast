@@ -123,6 +123,19 @@ class BinaryTree {
 
         return resultArray;
     }
+
+    depthFirstSearch() {
+        const stack = [];
+        stack.push(this.root);
+
+        while (stack.length) {
+            
+        }
+    }
+
+    breadthFirstSearch() {
+
+    }
 }
 
 module.exports = BinaryTree;
