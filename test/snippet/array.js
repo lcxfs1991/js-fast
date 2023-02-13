@@ -44,4 +44,11 @@ describe("Array", function() {
 
         expect(reduceResult).toEqual(reduceSelfResult);
     });
+
+    it("flat", function() {
+        const arr = new ArrayMake(1, 2, [3, 4], [5, [6, [7], 8]], 9, new Set([10, 11]));
+        const flatSelfResult = arr.flatSelf(4);
+
+        expect(flatSelfResult).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]);
+    });
 });
