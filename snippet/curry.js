@@ -1,22 +1,14 @@
- 
-const curry = (fn) => {
-    return curried = (...args) => {
+const _ = require('lodash');
 
-        if (typeof fn !== 'function') {
-            return;
-        }
+console.log(_);
 
-        if (args.length >= fn.length) {
-            return fn.bind(this)(...args);
-        }
+function curry(fn, ...args) {
+  return fn.length <= args.length ? fn(...args) : curry.bind(null, fn, ...args);
+}
 
-        return (...newArgs) => {
-            return curried.bind(this)(...args.concat(newArgs));
-        }
-
-    };
+const log = (date = Date.now(), className = '', funcName = '', msg = '') => {
+  console.log(`${date}-${className}-${funcName}-${msg}`);
 };
 
-module.exports = {
-    curry
-};
+// log(Date.now(), 'Person', 'getName', 'error');
+console.log(_.curry(log)(Date.now())('Person'));

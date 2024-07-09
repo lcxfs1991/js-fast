@@ -1,0 +1,25 @@
+<html>
+  <body>
+    <input />
+    <span></span>
+    <script>
+      let obj = {};
+      let input = document.querySelector('input');
+      let span = document.querySelector('span');
+      Object.defineProperty(obj, 'name', {
+        get() {
+          console.log('get value');
+          return input.value;
+        },
+        set(value) {
+          input.value = value;
+          span.innerHTML = value;
+        }
+      });
+
+      input.addEventListener('input', function() {
+        obj.name = this.value;
+      });
+    </script>
+  </body>
+</html>
